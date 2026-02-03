@@ -5,7 +5,7 @@ class GameCharacter:
         self.name = name
         self.power = power
         self.toughness = toughness
-        self.health = 100
+        self.health = 150
 
     def attack(self):
         return f"{self.name} attacks with power {self.power}!"
