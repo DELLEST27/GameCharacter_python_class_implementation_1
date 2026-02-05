@@ -13,7 +13,7 @@ print("Hello travler welcom to the game")
 
 # TODO 2:
 # Ask the user to name their character and store it in a variable.
-Characters_name = ("what is your name?", input )
+Characters_name = ("what is your name? ", input)
 
 
 # TODO 3:
@@ -25,14 +25,14 @@ toughness= 17
 
 # TODO 4:
 # Create a new GameCharacter object for the player.
-player= (GameCharacter, power, toughness) 
+player = GameCharacter(Characters_name, power, toughness) 
 
-# TODO 5:
+# TODO 5: 
 # Create a new GameCharacter object for an enemy.
 # The enemy's name can be something like "Goblin" or "Dragon".
 # Give the enemy its own power and toughness values.
-enemy = (power, toughness)
-enemy_health = 4
+enemy = GameCharacter("Goblin", 12, 9)
+enemy_health = enemy.health
 # TODO 6:
 # Print both characters' statuses.
 
@@ -40,35 +40,46 @@ enemy_health = 4
 # TODO 7:
 # Print the player's attack message.
 # Then make the enemy take damage equal to the player's power.
-print ("you attacked the enemy for 4 damage")
-player_damage = (int(enemy_health - 4))
+print(player.attack())
+enemy.take_damage(player.power)
 
 # TODO 8:
 # Print the enemy's updated status.
-if player_damage true:
-    print(enemy_health)
+print(enemy.get_status())
 
 # TODO 9:
 # Print the enemy's attack message.
 # Then make the player take damage equal to the enemy's power.
-enemy_damage = (int(player_health - 2))
+print(enemy.attack())
+enemy_damage = enemy.power
 
 # TODO 10:
 # Update the player's name property to be "Lord " + the original name
+if enemy.health <= 0:
+    player.name = "Lord " + player.name
+
+
 
 # TODO 11: 
 # Heal the player by 100 hitpoints
+heal = player.heal(100)
 
 
 # TODO 11:
 # Print the player's updated status.
-
+print(player.get_status())
 
 # TODO 12:
 # Modify the GameCharacter class so a "defeated" message is printed if health goes to 0 or less
 
+defeated_message = f"{enemy.name} has been defeated!"
+if enemy.health <= 0:
+    print(defeated_message)
 
 # TODO 13:
 # Go back and make it so the player gets a random Power and Toughness between 1 and 20.
+power = random.choice(numbers)
+toughness = random.choice(numbers)
+player = GameCharacter(Characters_name, power, toughness)
 
 # -----------------------------------------
